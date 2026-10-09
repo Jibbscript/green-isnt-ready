@@ -1,0 +1,46 @@
+{
+  "name": "green-isnt-ready",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Interactive explainer of how NVIDIA's Cluster Readiness Engine (NVCRE) certifies GPU clusters under load, with a fundamentals appendix.",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "lint": "oxlint",
+    "lint:data": "node scripts/build-data.mjs",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
+    "test": "node --experimental-strip-types --no-warnings scripts/test-logic.ts",
+    "qa": "bash scripts/qa.sh"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.2.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.16.4",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "autoprefixer": "^10.6.1",
+    "axe-core": "4.10.3",
+    "html-inline": "^1.2.0",
+    "oxlint": "^1.81.0",
+    "parcel": "^2.16.4",
+    "parcel-resolver-tspaths": "^0.0.9",
+    "postcss": "^8.5.29",
+    "tailwindcss": "3.4.1",
+    "typescript": "~6.0.2"
+  },
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "lmdb",
+      "msgpackr-extract"
+    ]
+  }
+}
